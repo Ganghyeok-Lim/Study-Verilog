@@ -47,6 +47,7 @@ $display("[Logical operation] Value of AND : %0b, OR : %0b, XOR : %0b, XNOR : %0
 end
 */
 
+/*
 reg [3:0] sdin1 = 0, sdin2 = 0;
 
 initial begin
@@ -56,7 +57,16 @@ sdin2 = din2 << 1;
 $display("din1 : %0b, din2 : %0b", din1, din2);
 $display("sdin1 : %0b, sdin2 : %0b", sdin1, sdin2);
 end
+*/
 
+reg [7:0] concat = 0;
+reg [11:0] rep = 0;
 
+initial begin
+    concat = {din1, din2};
+    rep = {3{din2}};
+
+    $display("Concat : %b, Rep : %b", concat, rep);
+end
 
 endmodule
